@@ -60,7 +60,11 @@ class TopRated extends Component {
               <p className="route-heading">Top-Rated Movies</p>
               <p className="page-numbers">
                 {currentPage}
-                <button onClick={this.turnPage} className="next-page">
+                <button
+                  onClick={this.turnPage}
+                  className="next-page"
+                  type="button"
+                >
                   <BsArrowRightSquareFill />
                 </button>
               </p>

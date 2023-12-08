@@ -27,7 +27,11 @@ class SearchMoviesDetails extends Component {
                     <p className="route-heading">Your "Search" Movies</p>
                     <p className="page-numbers">
                       {currentPage}
-                      <button onClick={turnPage} className="next-page">
+                      <button
+                        onClick={turnPage}
+                        className="next-page"
+                        type="button"
+                      >
                         <BsArrowRightSquareFill />
                       </button>
                     </p>

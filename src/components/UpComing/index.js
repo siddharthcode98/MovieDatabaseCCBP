@@ -61,7 +61,11 @@ class Upcoming extends Component {
               <p className="route-heading">UpComing Movies</p>
               <p className="page-numbers">
                 {currentPage}
-                <button onClick={this.turnPage} className="next-page">
+                <button
+                  onClick={this.turnPage}
+                  className="next-page"
+                  type="button"
+                >
                   <BsArrowRightSquareFill />
                 </button>
               </p>
