@@ -1,0 +1,14 @@
+footer {
+  position: relative;
+  min-width: 100%;
+  background-color: #1c1d21;
+  display: flex;
+  min-height: 12vh;
+  justify-content: center;
+  align-items: center;
+}
+.footer-style {
+  text-align: center;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}

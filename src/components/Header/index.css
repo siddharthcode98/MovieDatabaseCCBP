@@ -1,0 +1,72 @@
+.header {
+  background-color: #1c1d21;
+  min-height: 8vh;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: 15px;
+  }
+}
+.nav-button {
+  background-color: transparent;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+@media screen and (max-width: 425px) {
+  .nav-button {
+    font-size: 10px;
+  }
+}
+.nav-button:hover {
+  font-weight: bold;
+}
+.nav-bar-container {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+@media screen and (max-width: 425px) {
+  .nav-bar-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.search-bar-container {
+  background-color: #fff;
+  border-radius: 7px;
+  border-style: none;
+}
+.search-bar {
+  border-radius: 7px;
+  border-style: none;
+  outline: none;
+  width: 20rem;
+  height: 2rem;
+}
+.search-bar::placeholder {
+  color: #2c2c2c;
+}
+.search-icon {
+  background-color: transparent;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+}
+.search-bar-links-container {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 1200px) {
+  #searchBar {
+    display: none;
+  }
+}

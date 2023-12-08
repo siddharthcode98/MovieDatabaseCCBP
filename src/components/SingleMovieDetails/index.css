@@ -1,0 +1,66 @@
+p {
+  font-family: 'Montserrat';
+  color: #fff;
+}
+.movie-name {
+  font-size: x-large;
+}
+.movie-poster-in-details {
+  width: 50%;
+  height: 30%;
+
+  object-fit: cover;
+  border-radius: 20px;
+}
+.movie-details-container {
+  display: flex;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1024px) {
+  .movie-details-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+.cast-details-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1024px) {
+  .cast-details-container {
+    width: 100%;
+  }
+}
+.container-movie-details {
+  display: flex;
+}
+@media screen and (max-width: 1024px) {
+  .container-movie-details {
+    flex-direction: column;
+  }
+}
+.cast-details {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0px;
+}
+.section-container-movie-details {
+  position: relative;
+  min-height: 80vh;
+}
+.text-container {
+  margin-left: 10px;
+}
+@media screen and (max-width: 1024px) {
+  .text-container {
+    margin-left: 0px;
+  }
+}
+.genres {
+  color: #fff;
+  list-style: none;
+}
