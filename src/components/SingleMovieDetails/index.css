@@ -28,6 +28,7 @@ p {
 .cast-details-container {
   width: 100%;
   box-sizing: border-box;
+  padding: 0 5% 0 5%;
 }
 @media screen and (max-width: 1024px) {
   .cast-details-container {
@@ -36,6 +37,7 @@ p {
 }
 .container-movie-details {
   display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 1024px) {
   .container-movie-details {

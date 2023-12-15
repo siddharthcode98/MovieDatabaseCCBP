@@ -24,7 +24,7 @@ class SearchMoviesDetails extends Component {
               ) : (
                 <section className="section-container">
                   <div className="popular-container ">
-                    <p className="route-heading">Your "Search" Movies</p>
+                    <p className="route-heading">Your Search Movies</p>
                     <p className="page-numbers">
                       {currentPage}
                       <button

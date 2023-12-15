@@ -1,37 +1,36 @@
 import {Component} from 'react'
 
-import Loader from 'react-loader-spinner'
-import {IoStarSharp} from 'react-icons/io5'
 import CastItem from '../CastItem'
+import Loader from 'react-loader-spinner'
+
 import './index.css'
 
 class SingleMovieDetails extends Component {
   state = {movieObj: {}, loading: true, castList: []}
-
   componentDidMount() {
     this.getMovieDetails()
   }
-
-  MovieObjCaseConvert = item => ({
-    id: item.id,
-    runtime: item.runtime,
-    posterPath: item.poster_path,
-    OriginalTitle: item.original_title,
-    overview: item.overview,
-    voteAverage: item.vote_average,
-    releasedDate: item.released_date,
-    genre: item.genres,
-  })
-
-  CastObjCaseConvert = arr =>
-    arr.map(item => ({
+  MovieObjCaseConvert = item => {
+    return {
+      id: item.id,
+      runtime: item.runtime,
+      posterPath: item.poster_path,
+      OriginalTitle: item.original_title,
+      overview: item.overview,
+      voteAverage: item.vote_average,
+      releasedDate: item.released_date,
+      genre: item.genres,
+    }
+  }
+  CastObjCaseConvert = arr => {
+    return arr.map(item => ({
       id: item.id,
 
       orignialName: item.original_name,
       character: item.character,
       profilePath: item.profile_path,
     }))
-
+  }
   getMovieDetails = async () => {
     const {match} = this.props
     const {params} = match
@@ -54,7 +53,6 @@ class SingleMovieDetails extends Component {
       }))
     }
   }
-
   render() {
     const {movieObj, castList, loading} = this.state
     console.log(castList)
@@ -71,7 +69,7 @@ class SingleMovieDetails extends Component {
       <>
         {loading ? (
           <section className="loader-container">
-            <Loader type="Oval" color="green" className="loader-style" />
+            <Loader type="Oval" color={'green'} className="loader-style" />
           </section>
         ) : (
           <section className="section-container-movie-details">
@@ -86,10 +84,7 @@ class SingleMovieDetails extends Component {
                 <div className="text-container">
                   <p className="movie-name">{OriginalTitle}</p>
                   <p>{overview}</p>
-                  <p>
-                    rating:{rating}
-                    <IoStarSharp color="yellow" />
-                  </p>
+                  <p>rating:{rating}</p>
                   <p>{runtime} min</p>
                   <p>Genres</p>
                   <ul className="genres">

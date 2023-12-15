@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "parser": "babel-eslint",
+
   "extends": ["react-app", "airbnb", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {

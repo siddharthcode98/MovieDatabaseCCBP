@@ -2,8 +2,6 @@ import {Link} from 'react-router-dom'
 
 import './index.css'
 
-import {IoStarSharp} from 'react-icons/io5'
-
 const MovieCard = props => {
   const {details} = props
   const {id, posterPath, title, voteAverage} = details
@@ -16,11 +14,11 @@ const MovieCard = props => {
         className="poster-size"
       />
       <p>{title}</p>
-      <p>
-        rating: {rating} <IoStarSharp color="yellow" />
-      </p>
+      <p>rating: {rating}</p>
       <Link to={`/movie/${id}`}>
-        <button className="view-details">View Details</button>
+        <button className="view-details" type="button">
+          View Details
+        </button>
       </Link>
     </li>
   )

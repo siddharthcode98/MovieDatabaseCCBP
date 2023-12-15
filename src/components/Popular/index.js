@@ -1,7 +1,7 @@
 import Loader from 'react-loader-spinner'
 
 import {Component} from 'react'
-import {BsArrowRightSquareFill} from 'react-icons/bs'
+
 import MovieCard from '../MovieCard'
 
 import './index.css'
@@ -13,13 +13,14 @@ class Popular extends Component {
     this.getPopularMovies()
   }
 
-  caseConvert = arr =>
-    arr.map(item => ({
+  caseConvert = arr => {
+    return arr.map(item => ({
       id: item.id,
       posterPath: item.poster_path,
       title: item.title,
       voteAverage: item.vote_average,
     }))
+  }
 
   getPopularMovies = async () => {
     const {currentPage} = this.state
@@ -44,7 +45,19 @@ class Popular extends Component {
       this.getPopularMovies,
     )
   }
+  prevPage = () => {
+    const {currentPage} = this.state
 
+    if (currentPage > 1) {
+      this.setState(
+        prevState => ({
+          currentPage: prevState.currentPage - 1,
+          loading: !prevState.loading,
+        }),
+        this.getPopularMovies,
+      )
+    }
+  }
   render() {
     const {MovieList, loading, currentPage} = this.state
     // console.log(MovieList);
@@ -52,22 +65,30 @@ class Popular extends Component {
       <>
         {loading ? (
           <section className="loader-container">
-            <Loader type="Oval" color="green" className="loader-style" />
+            <Loader type="Oval" color={'green'} className="loader-style" />
           </section>
         ) : (
           <section className="section-container">
             <div className="popular-container ">
               <p className="route-heading">Popular Movies</p>
-              <p className="page-numbers">
-                {currentPage}
+              <div className="pagination">
+                <button
+                  onClick={this.prevPage}
+                  className="next-page"
+                  type="button"
+                >
+                  Prev
+                </button>
+                <p className="page-numbers">{currentPage}</p>
                 <button
                   onClick={this.turnPage}
                   className="next-page"
                   type="button"
                 >
-                  <BsArrowRightSquareFill />
+                  next
                 </button>
-              </p>
+              </div>
+
               <ul className="movie-list-container">
                 {MovieList.map(item => (
                   <MovieCard key={item.id} details={item} />

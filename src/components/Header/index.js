@@ -24,7 +24,6 @@ class Header extends Component {
           const {searchFn} = value
 
           const onClickUserInput = () => {
-            const {query} = this.state
             this.setState({query: ''})
             searchFn(query)
           }

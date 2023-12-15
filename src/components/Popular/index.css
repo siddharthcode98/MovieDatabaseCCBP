@@ -60,8 +60,13 @@
   border-style: none;
   background-color: #8b1c15;
   color: #fff;
-  margin-left: 20px;
+  height: 80%;
 }
 .loader-container {
   height: 100vh;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
